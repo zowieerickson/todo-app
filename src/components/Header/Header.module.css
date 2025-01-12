@@ -17,8 +17,10 @@
     align-items: center;
     margin: 0 auto;
     max-width: 540px;
+    color: #fff;
 }
 
 .themeToggle {
-
+    width: 26px;
+    height: 26px;
 }
