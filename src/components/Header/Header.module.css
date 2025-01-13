@@ -8,8 +8,13 @@
     height: 300px;
 
     margin: auto auto;
-    /* display: flex; */
 }
+
+@media screen and (max-width: 734px) {
+    .header {
+        padding-top: 48px;
+    }
+  }
 
 .title {
     display: flex;
@@ -24,3 +29,9 @@
     width: 26px;
     height: 26px;
 }
+
+@media screen and (max-width: 734px) {
+    .title {
+        max-width: 87%;
+    }
+  }

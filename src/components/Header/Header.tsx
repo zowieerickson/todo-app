@@ -9,7 +9,7 @@ const Header: React.FC = () => {
         <header className={styles.header}>
             <div className={styles.title}>
                 <h1>TODO</h1>
-                {ButtonToggle()}
+                <ButtonToggle />
             </div>
         </header>
     )
