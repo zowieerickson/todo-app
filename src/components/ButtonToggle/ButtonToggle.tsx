@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import styles from "./Header.module.css";
 
 const ButtonToggle: React.FC = () => {
     // State to track the current icon
