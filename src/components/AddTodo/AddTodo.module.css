@@ -10,4 +10,5 @@
 
 .addTodo:focus {
     color: #393A4B;
+    outline: none;
 }
