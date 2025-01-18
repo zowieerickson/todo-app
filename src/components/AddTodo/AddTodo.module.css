@@ -1,0 +1,13 @@
+.addTodo {
+    width: 100%;
+    height: 64px;
+    margin-top: 24px;
+    padding: 20px 24px;
+    background-color: #fff;
+    color: #9495A5;
+    border: none;
+}
+
+.addTodo:focus {
+    color: #393A4B;
+}
