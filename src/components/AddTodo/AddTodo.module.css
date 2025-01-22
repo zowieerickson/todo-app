@@ -12,3 +12,13 @@
     color: #393A4B;
     outline: none;
 }
+
+.todoList {
+    width: 100%;
+    min-height: 440px;
+    margin-top: 24px;
+    padding: 20px 24px;
+    background-color: #fff;
+    color: #9495A5;
+    border: none;    
+}

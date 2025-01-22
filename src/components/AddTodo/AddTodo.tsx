@@ -7,8 +7,8 @@ const AddTodo: React.FC = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const inputValue : string = e.target[0].value;
-        setTodos((prevTodos) => [...prevTodos, inputValue]) // Add inputValue to the todos list
-        console.log(inputValue, todos)
+        setTodos((prevTodos) => [...prevTodos, inputValue]); // Add inputValue to the todos list
+        e.currentTarget.reset();
     }
 
     return (
@@ -22,7 +22,7 @@ const AddTodo: React.FC = () => {
                 />
             </form>
 
-            <ul className={styles.addTodo}>
+            <ul className={styles.todoList}>
                 {todos.map((todo, index) => (
                    <li key={index}>{todo}</li>
                 ))}
