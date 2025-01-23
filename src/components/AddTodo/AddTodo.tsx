@@ -6,7 +6,7 @@ const AddTodo: React.FC = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const inputValue : string = e.target[0].value;
+        const inputValue : string = e.target[0].value.trim();
         setTodos((prevTodos) => [...prevTodos, inputValue]); // Add inputValue to the todos list
         e.currentTarget.reset();
     }
