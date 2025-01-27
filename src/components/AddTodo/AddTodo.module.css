@@ -22,3 +22,9 @@
     color: #9495A5;
     border: none;    
 }
+
+@media screen and (max-width: 734px) {
+    .todoList {
+        min-height: 368px;
+    }
+  }
