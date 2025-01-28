@@ -29,6 +29,10 @@
     color: #fff;
 }
 
+.title h1 {
+    letter-spacing: 10px;
+}
+
 .themeToggle {
     width: 26px;
     height: 26px;
