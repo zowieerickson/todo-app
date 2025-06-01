@@ -4,9 +4,12 @@ import styles from "./AddTodo.module.css";
 const AddTodo: React.FC = () => {
     const [todos, setTodos] = useState<string[]>([]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const inputValue : string = e.target[0].value.trim();
+        const form = e.currentTarget;
+        const input = form.elements.namedItem("todo") as HTMLInputElement;
+        const inputValue = input.value.trim();
+        
         setTodos((prevTodos) => [...prevTodos, inputValue]); // Add inputValue to the todos list
         e.currentTarget.reset();
     }
@@ -19,12 +22,13 @@ const AddTodo: React.FC = () => {
                     type="text"
                     placeholder="Create a new todo..."
                     aria-label="Task description"
+                    name="todo"
                 />
             </form>
 
             <ul className={styles.todoList}>
-                {todos.map((todo, index) => (
-                   <li key={index}>{todo}</li>
+                {todos.map((todo) => (
+                   <li key={todo}>{todo}</li>
                 ))}
             </ul>
         </>
