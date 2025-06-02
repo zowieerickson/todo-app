@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styles from "./AddTodo.module.css";
+import IconCross from "../../../images/icon-cross.svg?react"
 
 const AddTodo: React.FC = () => {
     type Todo = {
@@ -21,10 +22,11 @@ const AddTodo: React.FC = () => {
 
     function removeTodo (e: React.MouseEvent<HTMLUListElement, MouseEvent>) {
         const target = e.target as HTMLElement;
-        const li = target.closest('li');
-        if (!li) return;
+        const button = target.closest('button');
+        console.log(button)
+        if (!button) return;
 
-        setTodos(prev => prev.filter(item => item.id !== li.dataset.id))
+        setTodos(prev => prev.filter(item => item.id !== button.dataset.id))
     }
 
     return (
@@ -41,7 +43,11 @@ const AddTodo: React.FC = () => {
 
             <ul onClick={(e) => removeTodo(e)} className={styles.todoList}>
                 {todos.map((todo) => (
-                   <li key={todo.id} data-id={todo.id}>{todo.text}</li>
+                   <li key={todo.id}>{todo.text}
+                        <button data-id={todo.id}>
+                            <IconCross />
+                        </button>
+                   </li>
                 ))}
             </ul>
         </>
