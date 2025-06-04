@@ -37,3 +37,29 @@
     padding: 20px 24px;
     border-bottom: 1px solid #E3E4F1;
 }
+
+/* Checkbox */
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox span {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    border: 2px solid #ccc;
+    display: inline-block;
+    margin-right: 9px;
+    vertical-align: middle;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+.checkbox input[type="checkbox"]:checked + span {
+    background-color: #007aff;
+    border-color: #007aff;
+    /* Optional checkmark */
+    background-image: url('./images/icon-check.svg'); 
+    background-repeat: no-repeat;
+    background-position: center;
+  }

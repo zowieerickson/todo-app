@@ -43,7 +43,14 @@ const AddTodo: React.FC = () => {
 
             <ul onClick={(e) => removeTodo(e)} className={styles.todoList}>
                 {todos.map((todo) => (
-                   <li key={todo.id} className={styles.todoItem}>{todo.text}
+                   <li key={todo.id} className={styles.todoItem}>
+                        <div>
+                            <label className={styles.checkbox}>
+                                <input type="checkbox" />
+                                <span></span>
+                            </label>
+                            {todo.text}
+                        </div>
                         <button data-id={todo.id}>
                             <IconCross />
                         </button>
