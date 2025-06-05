@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import styles from "./AddTodo.module.css";
-import IconCross from "../../../images/icon-cross.svg?react"
+import IconCross from "../../../images/icon-cross.svg?react";
 
 const AddTodo: React.FC = () => {
     type Todo = {
         id: string;
         text: string;
+        completed: boolean;
     }
 
     const [todos, setTodos] = useState<Todo[]>([])
@@ -16,7 +17,7 @@ const AddTodo: React.FC = () => {
         const input = form.elements.namedItem("todo") as HTMLInputElement;
         const inputValue = input.value.trim();
 
-        setTodos(prev => [...prev, { id: crypto.randomUUID(), text: inputValue}]) // Add inputValue to the todos list
+        setTodos(prev => [...prev, { id: crypto.randomUUID(), text: inputValue, completed: false}]) // Add inputValue to the todos list
         e.currentTarget.reset();
     }
 
@@ -27,6 +28,15 @@ const AddTodo: React.FC = () => {
         if (!button) return;
 
         setTodos(prev => prev.filter(item => item.id !== button.dataset.id))
+    }
+
+    function completeTodo (e: React.ChangeEvent<HTMLInputElement>, todoId: string) {
+        e.stopPropagation()
+        setTodos(prev => 
+            prev.map(todo => 
+                todo.id === todoId ? {...todo, completed: !todo.completed } : todo
+            )
+        )
     }
 
     return (
@@ -46,7 +56,7 @@ const AddTodo: React.FC = () => {
                    <li key={todo.id} className={styles.todoItem}>
                         <div>
                             <label className={styles.checkbox}>
-                                <input type="checkbox" />
+                                <input onChange={(e) => completeTodo(e, todo.id)} type="checkbox" checked={todo.completed}/>
                                 <span></span>
                             </label>
                             {todo.text}
