@@ -63,3 +63,8 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  .completed {
+    text-decoration: line-through;
+    color: #D1D2DA;
+  }

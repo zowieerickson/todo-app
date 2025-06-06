@@ -54,7 +54,7 @@ const AddTodo: React.FC = () => {
             <ul onClick={(e) => removeTodo(e)} className={styles.todoList}>
                 {todos.map((todo) => (
                    <li key={todo.id} className={styles.todoItem}>
-                        <div>
+                        <div className={todo.completed ? styles.completed : ""}>
                             <label className={styles.checkbox}>
                                 <input onChange={(e) => completeTodo(e, todo.id)} type="checkbox" checked={todo.completed}/>
                                 <span></span>
