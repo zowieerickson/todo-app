@@ -51,7 +51,7 @@
     width: 24px;
     height: 24px;
     padding: 8px;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     display: inline-block;
     margin-right: 9px;
     vertical-align: middle;
@@ -63,7 +63,7 @@
     /* Optional checkmark */
     background:
         url('./images/icon-check.svg'),
-        linear-gradient(#55DDFF, #C058F3);
+        linear-gradient(135deg, #55DDFF, #C058F3);
     background-repeat: no-repeat;
     background-position: center;
   }
