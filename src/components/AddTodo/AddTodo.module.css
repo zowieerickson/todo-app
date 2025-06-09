@@ -60,10 +60,10 @@
 }
 
 .checkbox input[type="checkbox"]:checked + span {
-    background-color: #007aff;
-    border-color: #007aff;
     /* Optional checkmark */
-    background-image: url('./images/icon-check.svg'); 
+    background:
+        url('./images/icon-check.svg'),
+        linear-gradient(#55DDFF, #C058F3);
     background-repeat: no-repeat;
     background-position: center;
   }
