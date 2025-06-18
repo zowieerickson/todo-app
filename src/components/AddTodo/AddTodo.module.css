@@ -37,6 +37,7 @@
 .todoItem {
     display: flex;
     align-items: center;
+    font-size: 18px;
     justify-content: space-between;
     padding: 20px 24px;
     border-bottom: 1px solid #E3E4F1;
