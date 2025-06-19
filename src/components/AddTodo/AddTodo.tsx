@@ -17,6 +17,11 @@ const AddTodo: React.FC = () => {
         const input = form.elements.namedItem("todo") as HTMLInputElement;
         const inputValue = input.value.trim();
 
+        console.log('input value', inputValue)
+        if (inputValue === "") {
+            alert("Cannot add an empty to-do.")
+            return
+        }
         setTodos(prev => [...prev, { id: crypto.randomUUID(), text: inputValue, completed: false}]) // Add inputValue to the todos list
         e.currentTarget.reset();
     }
